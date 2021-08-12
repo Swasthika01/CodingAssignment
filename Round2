@@ -1,0 +1,45 @@
+create table employees(
+emp_Id int NOT NULL,
+EmpName varchar(255),
+Age int,
+PRIMARY KEY(emp_Id)
+);
+create table department(
+dept_Id int,
+depName varchar(255),
+FOREIGN KEY(dept_ID) REFERENCES employees(dept_Id)
+);
+
+insert values into employees(123,'sarah',23);
+insert values into employees(456,'matt',34);
+insert values into employees(789,'rebekah',28);
+
+insert values into department(123,'EIE');
+insert values into department(466,'CSE');
+insert values into department(789,'IT');
+select * from employees;
+select * from department;
+
+select employees._Id,department.departname
+from employees join 
+department on department.depart_Id=employees.emp_Id;
+
+update employees
+set depName='ISE'
+where emp_Id=789;
+
+Delete from employees where Empname='rebekah';
+commit;
+
+Select * from employees 
+order by Empname;
+
+select * from department
+order by depName;
+
+select * from employees
+where Empname Like '_a%';
+
+select * from department
+where depName like '%E';
+
